@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zufälliges Bild</title>
+    <style>
+      #image {
+        display: block;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      h1 {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onload="getRandomImage(); getRandomColor();">
+    <h1 id="title">Random Picker</h1>
+    <img id="image" src="" width="1146" height="708">
+    <script>
+      function getRandomImage() {
+        const images = [
+          "https://picsum.photos/1146/708",
+          "https://picsum.photos/1146/708",
+          "https://picsum.photos/1146/708",
+          "https://picsum.photos/1146/708",
+        ];
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const randomImage = images[randomIndex];
+        document.querySelector("#image").src = randomImage;
+      }
+      function getRandomColor() {
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+        document.querySelector("#title").style.color = `rgb(${red}, ${green}, ${blue})`;
+      }
+    </script>
+  </body>
+</html
+
